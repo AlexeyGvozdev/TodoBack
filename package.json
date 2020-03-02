@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/AlexeyGvozdev/TodoBack/issues"
   },
-  "homepage": "https://github.com/AlexeyGvozdev/TodoBack#readme"
+  "homepage": "https://github.com/AlexeyGvozdev/TodoBack#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
 }
