@@ -12,8 +12,8 @@ function handler (req, res) {
 		? req.url.replace(/\?[^\s]*$/g, '')
 		: req.url
 	const nameImage = url.substring(url.indexOf('static')).replace('static/', '')
-	const extention = url.substring(url.indexOf('.') + 1)
-	const pathImage = path.join(__dirname, '../','public', nameImage)
+	const extention = url.substring(url.lastIndexOf('.') + 1)
+	const pathImage = path.join(__dirname, '../', 'public', nameImage)
 	console.log(nameImage + '\n' + extention + '\n' + pathImage)
 	try {
 		res.writeHead(200, {
