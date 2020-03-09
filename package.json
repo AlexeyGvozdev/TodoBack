@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node  ./bin/app.j"
+    "start": "nodemon  .\\bin\\app.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/AlexeyGvozdev/TodoBack#readme",
   "dependencies": {
+    "mongoose": "^5.9.3",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2"
   }
 }
