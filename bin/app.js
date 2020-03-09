@@ -3,13 +3,20 @@ const io = require('socket.io')(app)
 const fs = require('fs')
 const path = require('path')
 const mongoose = require('mongoose')
+const nconf = require('nconf')
+
+
+nconf.argv()
+	.env()
+	.file({ file: path.join(__dirname, '../', 'config', 'config.json') })
 
 app.listen(80, () => {
 	console.log('start server')
 })
 
+console.log(nconf.get('database:login') + ':' + nconf.get('database:password'))
 
-mongoose.connect('mongodb+srv://test:12345qwert@cluster0-crix6.mongodb.net/test', {
+mongoose.connect('mongodb+srv://' + nconf.get('database:login') + ':' + nconf.get('database:password') + '@cluster0-crix6.mongodb.net/test', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }).then(() => {
