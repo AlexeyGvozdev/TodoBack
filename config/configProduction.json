@@ -1,0 +1,7 @@
+{
+    "database": {
+        "login": "test",
+        "password": "12345qwert"
+    },
+    "port": 80
+}
