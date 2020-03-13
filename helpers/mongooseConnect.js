@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 
 console.log(nconf.get('database:login') + ':' + nconf.get('database:password'));
 
-const connectString = `mongodb+srv://${nconf.get('database:login')}:${nconf.get('database:password')}@cluster0-crix6.mongodb.net/test`;
-
+const connectString = `mongodb+srv://${nconf.get('database:login')}:${nconf.get('database:password')}@todo-g1smr.mongodb.net/test?retryWrites=true&w=majority`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true
