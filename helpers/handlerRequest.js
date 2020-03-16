@@ -7,6 +7,7 @@ module.exports = (req, res) => {
     ? req.url.replace(/\?[^\s]*$/g, '')
     : req.url;
   try {
+    console.log('handler');
     const nameImage = url.substring(url.indexOf('static')).replace('static/', '');
     const pathImage = path.join(__dirname, '../', 'public', nameImage);
     const extention = extentionFunc(url);
