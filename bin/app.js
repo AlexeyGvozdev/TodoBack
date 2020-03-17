@@ -10,12 +10,12 @@ app.listen(nconf.get('port'), () => {
 
 io.on('connection', (socket) => {
   console.log('connection');
-  socket.emit('news', { hello: 'world' });
+  socket.emit('news', 'world');
   socket.on('dis', function (data) {
     console.log(data);
+    socket.emit('news', 'hello android');
+  });
+  socket.on('disconnect', (socket) => {
+    console.log('disconnect');
   });
 });
-
-// io.sockets.on('dis', (socket) => {
-//   console.log('disconnect');
-// });
